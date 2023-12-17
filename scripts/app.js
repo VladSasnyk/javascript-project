@@ -1,4 +1,4 @@
-const listItems = document.querySelectorAll('.header__list li');
+const listItems = document.querySelectorAll('.header li');
 
 const logo = document.querySelector('.header__logo');
 
@@ -71,11 +71,22 @@ function consoleText(words, id, colors) {
 
 //Burger
 const footer = document.querySelector('.footer');
+const burgerMenu = document.querySelector('.header__listMobile');
 const burgerButton = document.querySelector('.hamburger');
-burgerButton.addEventListener('click',()=>{
+burgerButton.addEventListener('click', () => {
     burgerButton.classList.toggle('active');
-    footer.classList.toggle('show');
+    burgerMenu.classList.toggle('active');
 })
+
+const burgerItems = document.querySelectorAll('.header__listMobile li');
+
+
+for (const item of burgerItems) {
+    item.addEventListener('click', () => {
+        burgerButton.classList.toggle('active');
+        burgerMenu.classList.toggle('active');
+    })
+}
 
 
 //Footer
